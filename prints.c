@@ -27,3 +27,14 @@ int print_string(va_list arg)
 
 	return (write(1, s, strlen(s)));
 }
+
+/**
+ * _putchar - function will print char
+ * @c: input
+ * Return: write
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
