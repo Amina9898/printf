@@ -6,7 +6,7 @@
   * Return: number of chars printed
   */
 
-int printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	func_print p_function[] = {{"c", print_char}, {"s", print_string}
 		, {NULL, NULL}};
