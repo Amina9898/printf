@@ -1,2 +1,2 @@
-This is a collabritive project.
+This is a collaboritive project.
 Printf function
