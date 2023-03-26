@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * printf - will print to screen
+  * _printf - will print to screen
   * @format : format specifier
   * Return: number of chars printed
   */
@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	func_print p_function[] = {{"c", print_char}, {"s", print_string}
 		, {NULL, NULL}};
-	int i = 0, len = 0, int j;
+	int i = 0, len = 0, j;
 
 	va_list ap;
 
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '%')
 			{
-				print_char(format[i]);
+				_putchar(format[i]);
 				i++;
 				len++;
 			}
@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
-		print_char(format[i]);
+		_putchar(format[i]);
 		len++;
 		i++;
 	}

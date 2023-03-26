@@ -10,8 +10,7 @@ int print_char(va_list arg)
 {
 	char c = va_arg(arg, int);
 
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 
