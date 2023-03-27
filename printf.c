@@ -8,9 +8,9 @@
 
 int _printf(const char *format, ...)
 {
-	func_print p_function[] = {{"c", print_char}, {"s", print_string} 
+	func_print p_function[] = {{"c", print_char}, {"s", print_string}
 		, {"%", print_percent}, {NULL, NULL}};
-	int i = 0, len = 0, j;
+	int i = 0, len = 0, j, f;
 
 	va_list ap;
 
@@ -24,18 +24,15 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			j = 0;
+
 			while (p_function[j].format != NULL)
 			{
 				if (*(p_function[j].format) == format[i])
 				{
 					len += p_function[j].funp(ap);
 					i++;
-				}	
-				j++;
-				if (p_function[j].format == NULL)
-				{
-					len += _putchar('%');
 				}
+				j++;
 			}
 		}
 		_putchar(format[i]);
