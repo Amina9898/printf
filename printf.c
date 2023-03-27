@@ -12,18 +12,22 @@ int _printf(const char *format, ...)
 		, {"%", print_percent}, {"d", print_integer}, {"i", print_integer}
 		, {NULL, NULL}};
 	int i = 0, len = 0, j;
-
 	va_list ap;
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(ap, format);
 	while (format && format[i])
 	{
-		if (format == NULL)
-			return (-1);
 		j = 0;
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '\0')
+			{
+				return (-1);
+			}
 			j = 0;
 
 			while (p_function[j].format != NULL)
