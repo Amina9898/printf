@@ -1,6 +1,18 @@
 #include "main.h"
 
 /**
+ * print_percent - prints %
+ * @arg: input
+ * Return: 1
+ */
+
+int print_percent(__attribute__((unused))va_list arg)
+{
+	_putchar('%');
+	return (1);
+}
+
+/**
  * print_char - function prints char
  * @arg: argument
  * Return: 1
