@@ -10,20 +10,25 @@ int print_integer(va_list arg)
 {
 	int len = 0;
 	int dv = 1;
+	int j;
 	int i = va_arg(arg, int);
 
 	if (i < 0)
 	{
 		len += _putchar('-');
-		i = i * -1;
+		j = i * -1;
 	}
-	for (; i / dv > 9;)
+	else
+	{
+		j = i;
+	}
+	for (; j / dv > 9;)
 	{
 		dv *= 10;
 	}
 	for (; dv != 0;)
-	{	len += _putchar('0' + i / dv);
-		i %= dv;
+	{	len += _putchar('0' + j / dv);
+		j %= dv;
 		dv /= 10;
 	}
 	return (len);
