@@ -17,28 +17,21 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	while (format && format[i])
 	{
+		if (format == NULL)
+			return (-1);
 		j = 0;
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '%')
+			j = 0;
+			while (p_function[j].format != NULL)
 			{
-				_putchar(format[i]);
-				i++;
-				len++;
-			}
-			else
-			{
-				j = 0;
-				while (p_function[j].format != NULL)
+				if (*(p_function[j].format) == format[i])
 				{
-					if (*(p_function[j].format) == format[i])
-					{
-						len += p_function[j].funp(ap);
-						i++;
-					}
-					j++;
+					len += p_function[j].funp(ap);
+					i++;
 				}
+				j++;
 			}
 		}
 		_putchar(format[i]);
