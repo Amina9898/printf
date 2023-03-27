@@ -22,7 +22,7 @@ int print_integer(va_list arg)
 		dv *= 10;
 	}
 	for (; dv != 0;)
-	{	len += _putchar('0' + i\dv);
+	{	len += _putchar('0' + i / dv);
 		i %= dv;
 		dv /= 10;
 	}
