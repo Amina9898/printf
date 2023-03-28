@@ -22,7 +22,7 @@ int print_char(va_list arg)
 {
 	char c = va_arg(arg, int);
 
-	write(1, &c, 1);
+	_putchar(c);
 	return (1);
 
 }
@@ -36,12 +36,16 @@ int print_char(va_list arg)
 
 int print_string(va_list arg)
 {
+	int i;
 	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
 		s = "(null)";
+	
+	for (i = 0, s[i] != '\0', i++)
+		_putchar(s[i]);
 
-	return (write(1, s, strlen(s)));
+	return (i);
 }
 
 /**
