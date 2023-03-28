@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	func_print p_function[] = {{"c", print_char}, {"s", print_string}
-		, {"%", print_percent}, {"d", print_integer}, {"i", print_integer}
+		, {"%", print_percent}, {"d", print_decimal}, {"i", print_integer}
 		, {NULL, NULL}};
 	int i = 0, len = 0, j;
 	va_list ap;
