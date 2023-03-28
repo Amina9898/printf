@@ -7,7 +7,7 @@
   * Return: will return length of string printed
   */
 
-int printer(const char *format, func_print p_function, va_list ap)
+int printer(const char *format, func_print p_function[], va_list ap)
 {
 	int len = 0;
 	int i, j, r;
@@ -39,7 +39,6 @@ int printer(const char *format, func_print p_function, va_list ap)
 				else
 					return (-1);
 			}
-			i++;
 		}
 		else
 		{

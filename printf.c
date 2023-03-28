@@ -8,42 +8,24 @@
 
 int _printf(const char *format, ...)
 {
-	func_print p_function[] = {{"c", print_char}, {"s", print_string}
-		, {"%", print_percent}, {"d", print_decimal}, {"i", print_integer}
-		, {NULL, NULL}};
-	int i = 0, len = 0, j;
+	func_print p_function[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_decimal},
+		{"i", print_integer},
+		{NULL, NULL}};
+
+	int len;
 	va_list ap;
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(ap, format);
-	while (format && format[i])
-	{
-		j = 0;
-		if (format[i] == '%')
-		{
-			i++;
-			if (format[i] == '\0')
-			{
-				return (-1);
-			}
-			j = 0;
 
-			while (p_function[j].format != NULL)
-			{
-				if (*(p_function[j].format) == format[i])
-				{
-					len += p_function[j].funp(ap);
-					i++;
-				}
-				j++;
-			}
-		}
-		_putchar(format[i]);
-		len++;
-		i++;
-	}
+	len = printer(format, p_function, ap);
 	va_end(ap);
+
 	return (len);
 }

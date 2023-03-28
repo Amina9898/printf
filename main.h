@@ -30,7 +30,5 @@ int _putchar(char c);
 
 int print_decimal(va_list arg);
 
-int printer(const char *format, func_print p_function, va_list ap);
-
-
+int printer(const char *format, func_print p_function[], va_list);
 #endif
