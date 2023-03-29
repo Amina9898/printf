@@ -16,11 +16,11 @@ int print_rot13(va_list arg)
 	if (s == NULL)
 		return (-1);
 
-	for (i = 0; s[i] != '\0', i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; s1[j] != '\0'; j++)
 		{
-			if (str[i] == s1[j])
+			if (s[i] == s1[j])
 			{
 				_putchar(s2[j]);
 				len++;

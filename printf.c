@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{"i", print_integer},
 		{"r", reverse_print},
 		{"b", print_binary},
+		{"R", print_rot13},
 		{NULL, NULL}};
 
 	int len;
