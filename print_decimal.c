@@ -28,7 +28,7 @@ int print_decimal(va_list arg)
 	}
 	for (; dv != 0;)
 	{
-		len += _putchar('0' + (j / dv));
+		len += _putchar('0' + j / dv);
 		j %= dv;
 		dv /= 10;
 	}
