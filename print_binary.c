@@ -22,7 +22,7 @@ int print_binary(va_list arg)
 	{
 		j = i;
 	}
-	for (; j /dv > 1;)
+	for (; j / dv > 1;)
 	{
 		dv *= 2;
 	}
