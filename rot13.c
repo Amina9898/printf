@@ -14,7 +14,7 @@ int print_rot13(va_list arg)
 	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
-		return (-1);
+		s = "(null)";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
